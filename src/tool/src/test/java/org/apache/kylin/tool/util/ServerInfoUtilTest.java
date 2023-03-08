@@ -54,7 +54,7 @@ public class ServerInfoUtilTest extends NLocalFileMetadataTestCase {
             clearFileList.add(sha1File);
         }
 
-        String version = "Kyligence Enterprise 4.0.0-SNAPSHOT";
+        String version = "Kylin 5.0 4.0.0-SNAPSHOT";
         File versionFile = new File(KylinConfig.getKylinHome(), "VERSION");
         if (!versionFile.exists()) {
             FileUtils.writeStringToFile(versionFile, version);

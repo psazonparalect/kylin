@@ -76,6 +76,10 @@ cp -rf conf/setenv.sh ${package_name}/conf/setenv.sh.template
 cp -rf bin/ ${package_name}/bin/
 cp -rf sbin/ ${package_name}/sbin/
 
+spark_version_pom=`mvn -f pom.xml help:evaluate -Dexpression=spark.version | grep -E '^[0-9]+\.[0-9]+\.[0-9]+' `
+echo "Prepare download spark scripts for end user with version ${spark_version_pom}."
+sed -i "s/SPARK_VERSION_IN_BINARY/${spark_version_pom}/g" build/sbin/download-spark-user.sh
+
 rm -rf ext lib commit_SHA1 VERSION # keep the spark folder on purpose
 
 cp -rf server/webapp/dist ${package_name}/server/public
