@@ -3579,12 +3579,12 @@
                                     <goal>single</goal>
                                 </goals>
                                 <configuration>
-                                    <tarLongFileMode>posix</tarLongFileMode>
+                                    <tarLongFileMode>gnu</tarLongFileMode>
                                     <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
                                     <appendAssemblyId>true</appendAssemblyId>
                                     <descriptors>
                                         <descriptor>
-                                            assembly/src/main/config/assemblies/source-assembly.xml
+                                            src/assembly/source-assembly.xml
                                         </descriptor>
                                     </descriptors>
                                     <finalName>apache-kylin-${project.version}</finalName>
